@@ -13,8 +13,8 @@ OR Stanowisko = "ordynator"
 OR Stanowisko = "lekarz dyżurny"
 OR Stanowisko = "oddzialowa"
 OR Stanowisko = "salowa"),
-Miesięcznie int
-CHECK (Miesięcznie>100)
+Miesiecznie int
+CHECK (Miesiecznie>100)
 ) ENGINE = InnoDB;
 
 DROP PROCEDURE IF EXISTS DodajZarobki;
@@ -24,7 +24,7 @@ CREATE PROCEDURE DodajZarobki()
 NOT DETERMINISTIC
 BEGIN
 DECLARE iterator int DEFAULT 1;
-INSERT INTO Zarobki(id_pracownika, Profesja, Stanowisko, Miesięcznie)
+INSERT INTO Zarobki(id_pracownika, Profesja, Stanowisko, Miesiecznie)
 VALUES 
 (1, "lekarz", "dyrektor", 10000),
 (2, "lekarz", "wicedyrektor", 7000),
@@ -48,10 +48,10 @@ VALUES
 (20, "lekarz", "lekarz dyzurny", 4000);
 WHILE (iterator<=80) DO
 	IF iterator=1 OR iterator=21 OR iterator=31 OR iterator=71 THEN
-		INSERT INTO Zarobki(id_pracownika, Profesja, Stanowisko, Miesięcznie)
+		INSERT INTO Zarobki(id_pracownika, Profesja, Stanowisko, Miesiecznie)
 		VALUES (iterator, "pielegniarka", "oddzialowa", 2000);
 	ELSE
-		INSERT INTO Zarobki(id_pracownika, Profesja, Stanowisko, Miesięcznie)
+		INSERT INTO Zarobki(id_pracownika, Profesja, Stanowisko, Miesiecznie)
 		VALUES (iterator, "pielegniarka", "salowa", 1500);
     END IF;
 	SET iterator = iterator + 1;

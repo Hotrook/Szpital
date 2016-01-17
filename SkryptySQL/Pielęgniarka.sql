@@ -51,7 +51,7 @@ DECLARE gabinety int DEFAULT 1;
     
     WHILE (zamkniete<=340) DO
     INSERT INTO Pielegniarka(Imie, Nazwisko, Sala)
-    VALUES ("Joanna", "Zamknieta", zamknięte);
+    VALUES ("Joanna", "Zamknieta", zamkniete);
 	SET zamkniete = zamkniete + 1;
 	END WHILE;
     

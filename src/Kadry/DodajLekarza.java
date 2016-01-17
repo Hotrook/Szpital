@@ -15,6 +15,8 @@ import javax.swing.JTextField;
 import javax.swing.JButton;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 
 public class DodajLekarza extends JFrame {
 
@@ -25,6 +27,9 @@ public class DodajLekarza extends JFrame {
 	private JTextField imie;
 	private JButton btnOk;
 	private JButton btnWr;
+	private JTextField pensja;
+	private JLabel lblStanowisko;
+	private JTextField stanowisko;
 
 	/**
 	 * Launch the application.
@@ -101,8 +106,33 @@ public class DodajLekarza extends JFrame {
 				String nazw = nazwisko.getText();
 				String stop = stopien.getText();
 				String spec = specjalizacja1.getText();
+				String stan = stanowisko.getText();
+				String zar = pensja.getText();
 				
 				String query = "INSERT INTO Lekarz (Imie,Nazwisko,Stopien,Specjalizacja) VALUES ('"+ im + "','"+nazw+"','"+stop+"','"+spec+"')";
+				System.out.println(query);
+				
+				Mquery.main();
+				Mquery.update(query);
+				
+				query = "SELECT MAX(ID) FROM Lekarz";
+				System.out.println(query);
+				
+				Mquery.main();
+				ResultSet rs = Mquery.query(query);
+				
+				String id = null;
+				
+				try {
+					if(rs.next()){
+						id = rs.getString(1);
+					}
+				} catch (SQLException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+				
+				query = "INSERT INTO Zarobki (id_pracownika, Profesja, Stanowisko,Miesiecznie) VALUES ("+ id + ",'lekarz','"+stan+"'," + zar+")";
 				System.out.println(query);
 				
 				Mquery.main();
@@ -124,6 +154,23 @@ public class DodajLekarza extends JFrame {
 		});
 		btnWr.setBounds(327, 232, 117, 29);
 		contentPane.add(btnWr);
+		
+		JLabel lblPensja = new JLabel("Pensja:");
+		lblPensja.setBounds(64, 154, 117, 16);
+		contentPane.add(lblPensja);
+		
+		pensja = new JTextField();
+		pensja.setColumns(10);
+		pensja.setBounds(203, 149, 130, 26);
+		contentPane.add(pensja);
+		
+		lblStanowisko = new JLabel("Stanowisko:");
+		lblStanowisko.setBounds(64, 182, 117, 16);
+		contentPane.add(lblStanowisko);
+		
+		stanowisko = new JTextField();
+		stanowisko.setColumns(10);
+		stanowisko.setBounds(203, 177, 130, 26);
+		contentPane.add(stanowisko);
 	}
-
 }

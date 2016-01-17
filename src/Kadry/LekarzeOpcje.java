@@ -67,15 +67,15 @@ public class LekarzeOpcje extends JFrame {
 		btnUsuLekarza.setBounds(150, 105, 150, 29);
 		contentPane.add(btnUsuLekarza);
 		
-		JButton btnZmieZarobkiLub = new JButton("Zmień zarobki lub premię");
+		JButton btnZmieZarobkiLub = new JButton("Zmień zarobki");
 		btnZmieZarobkiLub.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				Zarobki.main();
+				ZarobkiLekarza.main();
 				setVisible(false);
 			}
 		});
-		btnZmieZarobkiLub.setBounds(130, 162, 190, 29);
+		btnZmieZarobkiLub.setBounds(150, 162, 150, 29);
 		contentPane.add(btnZmieZarobkiLub);
 		
 		JButton btnWr = new JButton("Wróć");

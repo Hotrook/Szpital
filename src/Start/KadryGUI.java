@@ -60,7 +60,7 @@ public class KadryGUI extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 			}
 		});
-		Lekarze.setBounds(110, 43, 230, 43);
+		Lekarze.setBounds(110, 43, 230, 60);
 		contentPane.add(Lekarze);
 		
 		JButton btnPielgniarki = new JButton("Pielęgniarki");
@@ -70,12 +70,8 @@ public class KadryGUI extends JFrame {
 				PielegniarkiOpcje.main();
 			}
 		});
-		btnPielgniarki.setBounds(110, 112, 230, 43);
+		btnPielgniarki.setBounds(110, 127, 230, 60);
 		contentPane.add(btnPielgniarki);
-		
-		JButton btnZarobki = new JButton("Zarobki");
-		btnZarobki.setBounds(110, 178, 230, 43);
-		contentPane.add(btnZarobki);
 		
 		JButton btnZamknij = new JButton("Zamknij");
 		btnZamknij.addMouseListener(new MouseAdapter() {
