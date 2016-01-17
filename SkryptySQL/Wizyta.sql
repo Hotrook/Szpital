@@ -1,0 +1,35 @@
+DROP TABLE IF EXISTS Wizyta;
+
+CREATE TABLE IF NOT EXISTS Wizyta
+(
+id int NOT NULL PRIMARY KEY AUTO_INCREMENT,
+Data_Wizyty datetime DEFAULT CURRENT_TIMESTAMP,
+Lekarz int,
+Pacjent int
+) ENGINE = InnoDB;
+
+ALTER TABLE Wizyta ADD INDEX (id);
+
+ALTER TABLE Wizyta 
+  ADD CONSTRAINT FOREIGN KEY (Lekarz) REFERENCES Lekarz(id) ON DELETE CASCADE ON UPDATE CASCADE,  
+  ADD CONSTRAINT FOREIGN KEY (Pacjent) REFERENCES Pacjent(id) ON DELETE CASCADE ON UPDATE CASCADE;
+  
+DROP PROCEDURE IF EXISTS SprawdzDostepnosc;
+
+DELIMITER $$
+CREATE PROCEDURE SprawdzDostepnosc(
+IN id_lekarza int,  
+OUT dostepny bit)
+DETERMINISTIC
+BEGIN
+IF EXISTS(SELECT * FROM Wizyta 
+WHERE (Wizyta.Lekarz = id_lekarza 
+AND YEAR(DATEDIFF(NOW(), Wizyta.Data_Wizyty))=0
+AND MONTH(DATEDIFF(NOW(), Wizyta.Data_Wizyty))=0
+AND DAY(DATEDIFF(NOW(), Wizyta.Data_Wizyty))=0
+AND HOUR(TIMEDIFF(NOW(), Wizyta.Data_Wizyty))=0)) THEN
+	SET dostepny = 1;
+ELSE
+	SET dostepny = 0;
+END IF;
+END$$
