@@ -1,0 +1,27 @@
+Nasz program będzie miał zastosowanie w obłudze podstawowych zadań funkcjonowania szpitala.
+FUNKCJE:
+
+1. Wyszukiwanie dostępnych terminów wizyt dla konkretnego lekarza.
+	a) Wybór i umówienie wizyty wybranej spośród wyszukanych.
+2. Wyszukiwanie umówionych wizyt dla danego lekarza.
+	a) Wybór i odwołanie wizyty wybranej spośród wyszukanych.
+	c) Przeniesienie wizyty na najbliższy możliwy termin po ustalonym pierwotnie.
+3. Wyświetlanie listy personelu.
+	a) Zwalnianie pracowników.
+	b) Zatrudnianie pracowników.
+	c) Aktualizacja informacji o pracownikach.
+	d) Zmiana pensji, wypłacanych pracownikom.
+4. Wyświetlanie listy pacjentów szpitala.
+	a) Dopisanie pacjenta i przydział wolnego miejsca w sali, lub informacja o braku wolnych miejsc.
+	b) Wypisanie pacjenta i zwolnienie miejsca w sali.
+	c) Przeniesienie pacjenta do kostnicy i zwolnienie miejsca w sali.
+	d) Przeniesienie pacjenta na inną salę.
+	e) Aktualizacja medycznej informacji o pacjentach.
+5. Wyświetlanie informacji o znanych chorobach.
+	a) Dodanie nowej choroby.
+	b) Zmiana informacji o już istniejącej chorobie.
+6. Wyświetlanie informacji o salach.
+	a) Wyświetlanie listy pacjentów na danej sali.
+7. Wyświetlanie informacji o denatach, znajdujących się w kostnicy.
+	a) Aktualizacja informacji o denatach.
+
