@@ -43,7 +43,7 @@ DECLARE gabinety int DEFAULT 1;
     
     WHILE (zamkniete<=340) DO
     INSERT INTO Sala(Numer, Oddział, Miejsca)
-    VALUES (zamkniete, "zamknięty", 1);
+    VALUES (zamkniete, "zamkniety", 1);
 	SET zamkniete = zamkniete + 1;
 	END WHILE;
     

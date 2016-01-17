@@ -3,9 +3,9 @@ DROP TABLE IF EXISTS Choroba;
 CREATE TABLE IF NOT EXISTS Choroba
 (
 Nazwa varchar(70) UNIQUE PRIMARY KEY,
-Stopień_Zagrożenia int NOT NULL,
-CHECK (Stopień_Zagrożenia>0 
-AND Stopień_Zagrożenia<6)
+Stopien_Zagrozenia int NOT NULL,
+CHECK (Stopien_Zagrozenia>0 
+AND Stopien_Zagrozenia<6)
 ) ENGINE = InnoDB;
 
 ALTER TABLE Choroba ADD INDEX (Nazwa);
@@ -16,7 +16,7 @@ DELIMITER $$
 CREATE PROCEDURE DodajChoroby()
 NOT DETERMINISTIC
 BEGIN
-    INSERT INTO Choroba(Nazwa, Stopień_Zagrożenia)
+    INSERT INTO Choroba(Nazwa, Stopien_Zagrozenia)
     VALUES 
     ("Anoreksja", 5),
 	("Depresja", 4),

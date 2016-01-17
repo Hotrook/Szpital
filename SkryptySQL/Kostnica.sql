@@ -4,7 +4,7 @@ CREATE TABLE IF NOT EXISTS Kostnica
 (
 id int PRIMARY KEY UNIQUE NOT NULL,
 Data_Zgonu datetime DEFAULT NOW(),
-Data_Utylizacji datetime 
+Data_Utylizacji datetime DEFAULT NULL
 );
 
 ALTER TABLE Kostnica ADD INDEX (id);

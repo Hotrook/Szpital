@@ -3,13 +3,15 @@ DROP TABLE IF EXISTS Pacjent;
 CREATE TABLE IF NOT EXISTS Pacjent
 (
 id int NOT NULL PRIMARY KEY AUTO_INCREMENT,
-Imię varchar(70) NOT NULL,
+Imie varchar(70) NOT NULL,
 Nazwisko varchar(70) NOT NULL,
 Choroba varchar(70),
 Sala int,
 Data_Przyjęcia datetime DEFAULT NOW()
 ) ENGINE = InnoDB;
 
+INSERT INTO Pacjent(Imie,Nazwisko)
+VALUES ("stefan","lol");
 ALTER TABLE Pacjent ADD INDEX (id);
 
 ALTER TABLE Pacjent 

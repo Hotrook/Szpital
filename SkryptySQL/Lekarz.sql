@@ -1,15 +1,16 @@
+
 DROP TABLE IF EXISTS Lekarz;
 
 CREATE TABLE IF NOT EXISTS Lekarz
 (
 id int NOT NULL PRIMARY KEY AUTO_INCREMENT,
-Imię varchar(70) NOT NULL,
+Imie varchar(70) NOT NULL,
 Nazwisko varchar(70) NOT NULL,
-Stopień varchar(70),
-CHECK (Stopień = "lekarz medycyny" 
-OR  Stopień = "doktor medycyny" 
-OR Stopień = "doktor habilitowany medycyny" 
-OR Stopień = "profesor medycyny"),
+Stopien varchar(70),
+CHECK (Stopien = "lekarz medycyny" 
+OR  Stopien = "doktor medycyny" 
+OR Stopien = "doktor habilitowany medycyny" 
+OR Stopien = "profesor medycyny"),
 Specjalizacja varchar(70)
 CHECK (Specjalizacja = "psychiatra" 
 OR  Specjalizacja = "internista" 
@@ -63,28 +64,28 @@ DELIMITER $$
 CREATE PROCEDURE DodajLekarzy()
 NOT DETERMINISTIC
 BEGIN
-    INSERT INTO Lekarz(Imię, Nazwisko, Stopień, Specjalizacja)
+    INSERT INTO Lekarz(Imie, Nazwisko, Stopien, Specjalizacja)
     VALUES 
     ("Marcin", "Dziemieszonek", "profesor medycyny", "psychiatra"),
     ("Robert", "Fajka", "doktor habilitowany medycyny", "psychiatra"),
-    ("Damian", "Gryzipiórek", "doktor habilitowany medycyny", "psychiatra"),
-    ("Florian", "Młotek", "doktor medycyny", "psychiatra"),
+    ("Damian", "Gryzipiorek", "doktor habilitowany medycyny", "psychiatra"),
+    ("Florian", "Mlotek", "doktor medycyny", "psychiatra"),
     ("Krzystof", "Skrzetuski", "doktor medycyny", "psychiatra"),
     ("Dawid", "Kowalski", "doktor medycyny", "psychiatra"),
-    ("Jarosław", "Poznański", "doktor medycyny", "psychiatra"),
-    ("Michał", "Gadowicz", "lekarz medycyny", "psychiatra"),
-    ("Sebastian", "Mróz", "lekarz medycyny", "psychiatra"),
+    ("Jaroslaw", "Poznanski", "doktor medycyny", "psychiatra"),
+    ("Michal", "Gadowicz", "lekarz medycyny", "psychiatra"),
+    ("Sebastian", "Mroz", "lekarz medycyny", "psychiatra"),
     ("Jolanta", "Dziemieszonek", "lekarz medycyny", "psychiatra"),
-    ("Małgorzata", "Pawlak", "lekarz medycyny", "psychiatra"),
+    ("Malgorzata", "Pawlak", "lekarz medycyny", "psychiatra"),
     ("Katarzyna", "Kwiatkowska", "lekarz medycyny", "psychiatra"),
-    ("Paweł", "Prostacki", "lekarz medycyny", "psychiatra"),
+    ("Pawel", "Prostacki", "lekarz medycyny", "psychiatra"),
     ("Ilona", "Kowalska", "lekarz medycyny", "psychiatra"),
     ("Fryderyk", "Nowak", "lekarz medycyny", "psychiatra"),
-    ("Hanna", "Miła", "doktor medycyny", "internista"),
+    ("Hanna", "Mila", "doktor medycyny", "internista"),
     ("Zuzanna", "Pogrzaniecka", "doktor medycyny", "internista"),
-    ("Piotr", "Podgórski", "lekarz medycyny", "internista"),
+    ("Piotr", "Podgorski", "lekarz medycyny", "internista"),
     ("Franciszek", "Kleeberg", "lekarz medycyny", "dentysta"),
-    ("Bazyli", "Świątkowski", "lekarz medycyny", "dentysta");
+    ("Bazyli", "Swiatkowski", "lekarz medycyny", "dentysta");
 END$$
 
 CALL DodajLekarzy();
